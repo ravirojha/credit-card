@@ -1,17 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+const toPerson = {
+  fullName: 'Mr. Receiver',
+  address: '123 Fake st.\n Boston, MA 02118',
+};
+
+const fromPerson = {
+  fullName: 'Mr. Sender',
+  address: '123 Fake st.\n San Francisco, CA 94101',
+};
+
+const AdressLabel = ({ person }) => {
+  return (
+    <div>
+      <div>{person.fullName}</div>
+      <div className='display-linebreak'>{person.address}</div>
+    </div>
+  );
+};
+
+const Envelope = ({ to, from }) => {
+  return (
+    <div className='envelope'>
+      <div className='stamp'>
+        <div className='stamp-text'>STAMP</div>
+      </div>
+      <div className='sender'>
+        <AdressLabel person={from} />
+      </div>
+      <div className='receiver'>
+        <AdressLabel person={to} />
+      </div>
+    </div>
+  );
+};
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Envelope to={toPerson} from={fromPerson} />,
+  document.querySelector('#root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
