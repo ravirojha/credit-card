@@ -1,40 +1,44 @@
-.envelope {
-  border: 1px solid #ccc;
-  width: 564px;
-  min-height: 376px;
-  font-weight: bold;
-}
-
-.sender {
-  display: inline-block;
-  margin-left: 10px;
-  margin-top: 20px;
-}
-
-.stamp {
+.body {
   position: absolute;
-  top: 30px;
-  left: 480px;
-  border: 1px solid #999;
-  display: flex;
-  width: 75px;
-  height: 75px;
+  top: 200px;
+  left: 200px;
+  border: 1px solid black;
+  border-radius: 15px;
   justify-content: center;
   align-items: center;
-
-  color: #777;
+  padding: 20px;
+  font-size: xx-large;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgb(8, 8, 185);
+  color: white;
 }
 
-.stamp-text {
-  transform: rotate(-45deg);
+.bank-name {
+  text-align: right;
+}
+
+.card-number {
+  font-size: x-large;
+}
+
+.card-number-f {
+  font-size: x-small;
+}
+
+.exp {
+  font-size: large;
+  text-align: center;
+  left: 240px;
+  bottom: 100px;
+}
+
+.valid-thru {
+  width: 30px;
+  display: inline-block;
+  font-size: x-small;
   text-transform: uppercase;
 }
 
-.receiver {
-  margin-top: 55px;
-  margin-left: 220px;
-}
-
-.display-linebreak {
-  white-space: pre-line;
+.name {
+  font-size: large;
 }
